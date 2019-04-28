@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ * Nodejs are not support ES6 import export
+ * Use ES5 module.exports and require
+ */
+require('dotenv').config();
+const app = require('../app');
+const http = require('http');
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(process.env.SERVER_PORT || '3000');
