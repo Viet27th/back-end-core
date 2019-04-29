@@ -1,11 +1,10 @@
 const Users = require('../models/users');
-const bcrypt = require('bcrypt-nodejs');
 
 exports.createAdminUser = () => {
   let userInfo = {
     name: 'Xuan Viet',
     email: 'tobecool@gmail.com',
-    password: bcrypt.hashSync('123456'),
+    password: '123456',
     role: 'super'
   };
   Users.findOne().where('email').equals(userInfo.email).select({
